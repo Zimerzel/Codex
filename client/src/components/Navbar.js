@@ -1,35 +1,25 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
 function navBar(){
     return(
     <>
-        <Navbar bg="light" expand="lg">
-        <Container fluid>
-            <Navbar.Brand href="#">Codex</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-            <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: '100px' }}
-                navbarScroll
-            >
-                <Nav.Link href="/Home">Home</Nav.Link>
-                <Nav.Link href="/Games">Games</Nav.Link>
-                {/* <Nav.Link href="#" disabled>
-                Link
-                </Nav.Link> */}
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+        <Navbar.Brand href="#home">Codex</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+            <Nav.Link href="/Home">Home</Nav.Link>
+            <Nav.Link href="/Games">Games</Nav.Link>
             </Nav>
-            <Form className="d-flex">
-                <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-            </Form>
-            </Navbar.Collapse>
+            <Nav>
+            <Nav.Link href="#DarkMode"><i class='bx bx-sun'></i></Nav.Link>
+            <Nav.Link eventKey={2} href="/Search">
+                <i class='bx bx-search-alt'></i>
+            </Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
         </Container>
         </Navbar>
     </>

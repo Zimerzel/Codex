@@ -1,15 +1,14 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-
-import Header from './components/Header';
 import Home from './components/Home';
 import Games from './components/Games';
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <Router>
       <>
-        <Header />
+        <Navbar />
         
         <Switch>
           <Route exact path='/' render= {() => (<Redirect to='/home'/>)} />
