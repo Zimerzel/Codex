@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home';
 import Games from './components/Games';
 import SinglePost from './components/Single-Game';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
             </Suspense>
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
+
+        <Footer />
       </>
     </Router>
 

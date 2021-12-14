@@ -53,21 +53,21 @@ function SinglePost(){
                 <section id="single__carousel">
                     <div id="title__carousel">
                         <Carousel>
-                            <Carousel.Item>
+                            <Carousel.Item interval={6000}>
                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PyMlV5_HRWk?start=1" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                                 </iframe>
                             </Carousel.Item>
-                            <Carousel.Item>
+                            <Carousel.Item interval={6000}>
                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/d7-iz_uLV-E?start=1" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                                 </iframe>
                             </Carousel.Item>
-                            <Carousel.Item>
+                            <Carousel.Item interval={6000}>
                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/MBb88gLmJZY?start=1" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
