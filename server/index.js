@@ -12,16 +12,26 @@ const db = mysql.createPool({
 })
 
 app.use(cors());
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}))
+
+app.get('/api/get', (req, res) => {
+    const sqlSelect = "SELECT * FROM comments";
+    db.query(sqlSelect, (err, result) => {
+        console.log(err);
+        //send to front end:
+        //res.send(result);
+    });
+})
 
 app.post('/api/insert', (req, res) => {
 
     const username = req.body.username;
     const review = req.body.review;
 
-    const sqlInsert = "INSERT INTO comments (username, review) VALUES (?,?)"
+    const sqlInsert = "INSERT INTO comments (username, review) VALUES ('webber', 'greatest')"
     db.query(sqlInsert, (username, review), (err, result) => {
-
+        console.log(err);
     });
 });
 
