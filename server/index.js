@@ -35,6 +35,16 @@ app.post('/api/insert', (req, res) => {
     });
 });
 
+app.put('/api/update', (req, res) => {
+
+    const review = req.params.review;
+
+    const sqlUpdate = "UPDATE comments SET review = ? WHERE review = ?"
+
+    db.query(sqlUpdate, review , (err, result) => {
+        console.log(err);
+    });
+})
 app.delete('/api/delete/:review', (req, res) => {
 
     const review = req.params.review;
