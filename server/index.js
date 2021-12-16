@@ -19,7 +19,7 @@ app.get('/api/get', (req, res) => {
     const sqlSelect = "SELECT * FROM comments";
     db.query(sqlSelect, (err, result) => {
         console.log(err);
-        //send to front end:
+        //send to front end
         //res.send(result);
     });
 })
@@ -29,12 +29,22 @@ app.post('/api/insert', (req, res) => {
     const username = req.body.username;
     const review = req.body.review;
 
-    const sqlInsert = "INSERT INTO comments (username, review) VALUES ('webber', 'greatest')"
+    const sqlInsert = "INSERT INTO comments (username, review) VALUES (?,?)"
     db.query(sqlInsert, (username, review), (err, result) => {
         console.log(err);
     });
 });
 
+app.delete('/api/delete/:review', (req, res) => {
+
+    const review = req.params.review;
+
+    const sqlDelete = "DELETE FROM comments WHERE review = ?"
+
+    db.query(sqlDelete, review , (err, result) => {
+        console.log(err);
+    });
+})
 app.listen(3001, () => {
     console.log('running on port 3001')
 });
