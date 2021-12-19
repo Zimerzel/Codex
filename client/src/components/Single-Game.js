@@ -5,7 +5,7 @@ import { Carousel } from 'react-bootstrap'
 function SinglePost(){
     return(
         <>  
-            <div>
+            <div className='game__container'>
                 <section>
                     <div className="game__header">
                         <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc98jk.jpg" alt="header" />
