@@ -16,9 +16,6 @@ function navBar(){
             </Nav>
             <Nav>
             <Nav.Link href="#DarkMode"><i class='bx bx-sun'></i></Nav.Link>
-            <Nav.Link eventKey={2} href="/Search">
-                <i class='bx bx-search-alt'></i>
-            </Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Container>

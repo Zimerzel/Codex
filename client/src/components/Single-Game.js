@@ -1,8 +1,25 @@
-import React from 'react'
-import { LoremIpsum } from 'react-lorem-ipsum'
-import { Carousel } from 'react-bootstrap'
+import React from 'react';
+import { LoremIpsum } from 'react-lorem-ipsum';
+import { Carousel } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_REVIEW } from '../utils/queries';
 
 function SinglePost(){
+    const { id: reviewId } = useParams();
+    console.log(reviewId);
+  
+    const { loading, data } = useQuery(QUERY_REVIEW, {
+      variables: { id: reviewId }
+    });
+    
+    const review = data?.review || {};
+    
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+
     return(
         <>  
             <div className='game__container'>
@@ -48,6 +65,21 @@ function SinglePost(){
                         <br />
                         <p>game description</p>
                         <p><LoremIpsum p={3} /></p>
+                    </div>
+                </section>
+                <section className="reviews">
+                    <div>
+                        <div>
+                            <p>
+                            <span>
+                                {review.username}
+                            </span>{' '}
+                            review on {review.createdAt}
+                            </p>
+                            <div>
+                            <p>{review.ReviewText}</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section id="single__carousel">
