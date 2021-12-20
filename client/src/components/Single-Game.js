@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_REVIEW } from '../utils/queries';
 
-function SinglePost(){
+const SinglePost = (props) => {
     const { id: reviewId } = useParams();
     console.log(reviewId);
   
@@ -31,12 +31,18 @@ function SinglePost(){
                 <section>
                 <div className="info">
                     <div id="title__info">
-                        <h1>Game Title</h1>
-                        <h2>Game Release Date</h2>
+                        {/* <h1>{game.name}</h1>
+                        <h2>{game.released}</h2> */}
                         <h3>Game Developer</h3>
                         <div id="title__about">
-                            <h3>Genre:</h3>
+                            {/* <h3>Genre(s):</h3>
+                            {
+                                game.genres.map(g => `${g.name} | `)
+                            }   
                             <h3>Platforms:</h3>
+                            {
+                                game.platforms.map(p => `${p.platform.name} | `)
+                            } */}
                             <div className="rating">
                                 <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5" />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ReviewList = ({ reviews, title }) => {
   if (!reviews.length) {
-    return <h3>No Thoughts Yet</h3>;
+    return <h3>No Reviews Yet</h3>;
   }
 
   return (
