@@ -1,50 +1,74 @@
-import React from 'react';
-import { LoremIpsum } from 'react-lorem-ipsum';
+import React, { useState, useEffect } from "react";
 import { Carousel } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_REVIEW } from '../utils/queries';
+import Axios from "axios";
+import { Spinner } from "react-bootstrap";
+import VideoPlayer from "./VideoPlayer";
 
-const SinglePost = (props) => {
-    const { id: reviewId } = useParams();
-    console.log(reviewId);
+const GameDetails = ({ match, history, error, setError }) => {
+	const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
+	const gameSlug = match.params.slug
+
+	const [game, setGame] = useState(null)
+	const [platforms, setPlatforms] = useState([])
+	const [rating, setRating] = useState({})
+	const [developer, setDeveloper] = useState([])
+
+	useEffect(
+		function getGame() {
+			const url = `https://api.rawg.io/api/games/${gameSlug}?key=${REACT_APP_API_KEY}`
+
+			Axios(url)
+				.then((data) => {
+					setGame(data.data)
+					setPlatforms(data.data.platforms)
+					setRating(data.data.esrb_rating)
+					setDeveloper(data.data.developers)
+				})
+				.catch((error) => {
+					console.error(error)
+					setError(true)
+				})
+		},
+		[REACT_APP_API_KEY, gameSlug, setError, error]
+	)
+
+	const goBack = () => { 
+		history.goBack()
+	}
+		if (error) {
+			return <p>oh no... looks like something went wrong</p>
+		}
+	
+
+	if (!game) {
+		return (
+			<div className='details_spinner'>
+				<Spinner
+					animation='border'
+					variant='dark'
+				/>{' '}
+			</div>
+		)
+	}
   
-    const { loading, data } = useQuery(QUERY_REVIEW, {
-      variables: { id: reviewId }
-    });
-    
-    const review = data?.review || {};
-    
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
-
-    return(
+    return (
         <>  
             <div className='game__container'>
                 <section>
                     <div className="game__header">
-                        <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc98jk.jpg" alt="header" />
+                        <img src={game.background_image_additional} alt="header" />
                     </div>
                 </section>
                 <section>
                 <div className="info">
                     <div id="title__info">
-                        {/* <h1>{game.name}</h1>
-                        <h2>{game.released}</h2> */}
-                        <h3>Game Developer</h3>
+                        <h1>{game.name}</h1>
+                        <h2>{developer[0]?.name}</h2>
+                        <h2>{game.genres[0]?.name}</h2>
                         <div id="title__about">
-                            {/* <h3>Genre(s):</h3>
-                            {
-                                game.genres.map(g => `${g.name} | `)
-                            }   
-                            <h3>Platforms:</h3>
-                            {
-                                game.platforms.map(p => `${p.platform.name} | `)
-                            } */}
                             <div className="rating">
-                                <div class="rate">
+                              {game.rating} / 5
+                                {/* <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5" />
                                     <label for="star5" title="text">5 stars</label>
                                     <input type="radio" id="star4" name="rate" value="4" />
@@ -55,13 +79,13 @@ const SinglePost = (props) => {
                                     <label for="star2" title="text">2 stars</label>
                                     <input type="radio" id="star1" name="rate" value="1" />
                                     <label for="star1" title="text">1 star</label>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <aside>
-                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2dto.png" alt="" />
-                        <button>Buy</button>
+                        <img src={game.background_image} alt="" />
+                        <button><a href={game.website}>BUY</a></button>
                     </aside>
                 </div>
                 </section>
@@ -69,12 +93,11 @@ const SinglePost = (props) => {
                     <div id="title__description">
                         <h2>About</h2>
                         <br />
-                        <p>game description</p>
-                        <p><LoremIpsum p={3} /></p>
+                        <p>{game.description_raw}</p>
                     </div>
                 </section>
                 <section className="reviews">
-                    <div>
+                    {/* <div>
                         <div>
                             <p>
                             <span>
@@ -86,10 +109,11 @@ const SinglePost = (props) => {
                             <p>{review.ReviewText}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </section>
                 <section id="single__carousel">
                     <div id="title__carousel">
+                        
                         <Carousel>
                             <Carousel.Item interval={6000}>
                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PyMlV5_HRWk?start=1" 
@@ -121,4 +145,5 @@ const SinglePost = (props) => {
     )
 }
 
-export default SinglePost;
+  export default GameDetails;
+  
