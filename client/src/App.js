@@ -1,16 +1,14 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Navbar from './components/Navbar'
-import Home from './components/Home';
-import Search from './components/Search';
-import SinglePost from './components/Single-Game';
-import Footer from './components/Footer';
-import TopGames from './components/TopGames'
-import GameDetail from './components/GameDetail';
-
+// import './App.css';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/react-hooks';
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
+
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import GameDetails from './components/GameComponents/GameDetails'
 
 const http = createHttpLink({
   uri: "/graphql",
@@ -34,29 +32,35 @@ const client = new ApolloClient({
 
 
 function App() {
-  return (
+	return (
     <ApolloProvider client={client}>
-      <Router>
-        <>
+      <div>
+        <header>
+          {' '}
           <Navbar />
-          
+        </header>
+        <main>
           <Switch>
-            <Route exact path='/' render= {() => (<Redirect to='/home'/>)} />
             <Route exact path='/home' component={Home} />
-              <Suspense fallback={<div id="fallback">Loading...</div>}>
-                <Route path='/game/:name' component={GameDetail} />
-                <Route exact path='/single-game' component={SinglePost} />
-                <Route exact path='/search' component={Search} />
-                <Route exact path='/top-games' component={TopGames} />
-              </Suspense>
-            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+            <Route
+              path='/:slug'
+              render={(routerProps) => {
+                return (
+                  <GameDetails
+                    history={routerProps.history}
+                    match={routerProps.match}
+                  />
+                )
+              }}
+            />
           </Switch>
-
+        </main>
+        <footer>
           <Footer />
-        </>
-      </Router>
+        </footer>
+      </div>
     </ApolloProvider>
-  );
+	)
 }
 
-export default App;
+export default App
