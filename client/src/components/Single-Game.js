@@ -31,8 +31,6 @@ const SinglePost = (props) => {
                 <section>
                 <div className="info">
                     <div id="title__info">
-                        {/* <h1>{game.name}</h1>
-                        <h2>{game.released}</h2> */}
                         <h3>Game Developer</h3>
                         <div id="title__about">
                             {/* <h3>Genre(s):</h3>
