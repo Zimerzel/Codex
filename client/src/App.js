@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/react-hooks';
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
+import { Redirect } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -41,6 +42,7 @@ function App() {
         </header>
         <main>
           <Switch>
+            <Route exact path='/' render= {() => (<Redirect to='/home'/>)} />
             <Route exact path='/home' component={Home} />
             <Route
               path='/:slug'
