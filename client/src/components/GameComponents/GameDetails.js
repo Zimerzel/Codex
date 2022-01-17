@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Carousel } from 'react-bootstrap';
+// import { Carousel } from 'react-bootstrap';
 import Axios from "axios";
 import { Spinner } from "react-bootstrap";
-import VideoPlayer from "./VideoPlayer";
+// import VideoPlayer from "./VideoPlayer";
 
 const GameDetails = ({ match, history, error, setError }) => {
 	const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
@@ -68,18 +68,6 @@ const GameDetails = ({ match, history, error, setError }) => {
                         <div id="title__about">
                             <div className="rating">
                               {game.rating} / 5
-                                {/* <div class="rate">
-                                    <input type="radio" id="star5" name="rate" value="5" />
-                                    <label for="star5" title="text">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" value="4" />
-                                    <label for="star4" title="text">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" value="3" />
-                                    <label for="star3" title="text">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" value="2" />
-                                    <label for="star2" title="text">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" value="1" />
-                                    <label for="star1" title="text">1 star</label>
-                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -111,9 +99,8 @@ const GameDetails = ({ match, history, error, setError }) => {
                         </div>
                     </div> */}
                 </section>
-                <section id="single__carousel">
-                    <div id="title__carousel">
-                        
+                {/* <section id="single__carousel">
+                    <div>
                         <Carousel>
                             <Carousel.Item interval={6000}>
                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PyMlV5_HRWk?start=1" 
@@ -138,7 +125,7 @@ const GameDetails = ({ match, history, error, setError }) => {
                             </Carousel.Item>
                         </Carousel>
                     </div>
-                </section>
+                </section> */}
             </div>
 
         </>

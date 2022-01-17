@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import { NavLink } from 'react-router-dom'
+import { Player } from 'video-react'
 
 const GameCard = ({ game }) => {
 
