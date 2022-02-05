@@ -6,6 +6,7 @@ import { Row, Col, Card, Dropdown, DropdownButton, FormControl, InputGroup } fro
 import Halo from '../assets/images/Halo.jpg';
 import Forza from '../assets/images/forza.jpg';
 import F1 from '../assets/images/f1.jpg';
+import CardList from './GameComponents/CardList';
 
 function Home(){
     return(
@@ -78,61 +79,8 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <section class="games">
-                <div>
-                    <h1>Games</h1>
-                    <div className="search">
-                        <InputGroup className="mb-3">
-                            <DropdownButton
-                            variant="outline-secondary"
-                            title="Dropdown"
-                            id="input-group-dropdown-1"
-                            >
-                            <Dropdown.Item href="#">Action</Dropdown.Item>
-                            <Dropdown.Item href="#">Shooter</Dropdown.Item>
-                            <Dropdown.Item href="#">Fantasy</Dropdown.Item>
-                            </DropdownButton>
-                            <FormControl placeholder="search" aria-label="Text input with dropdown button" />
-                        </InputGroup>
-                    </div>
-                </div>
-                <div className="cards">
-                <Row xs={1} md={2} lg={3} className="g-4">
-                    <Col>
-                        <Card style={{ width: '30rem' }}>
-                            <Card.Img variant="top" src={Forza} />
-                            <Card.Body>
-                                <Card.Title>Forza Horizon 5</Card.Title>
-                                <Card.Text>
-                                    Arcade Racer
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '30rem' }}>
-                            <Card.Img variant="top" src={Halo} />
-                            <Card.Body>
-                                <Card.Title>Halo Infinite</Card.Title>
-                                <Card.Text>
-                                    Sci-fi game/Shooter
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '30rem' }}>
-                            <Card.Img variant="top" src={F1} />
-                            <Card.Body>
-                                <Card.Title>F1 2021</Card.Title>
-                                <Card.Text>
-                                    Sim Racing Game
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-                </div>
+            <section className="games">
+                <CardList/>
             </section>
             </div>
         </>

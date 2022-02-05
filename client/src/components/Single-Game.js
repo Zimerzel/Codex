@@ -1,11 +1,28 @@
-import React from 'react'
-import { LoremIpsum } from 'react-lorem-ipsum'
-import { Carousel } from 'react-bootstrap'
+import React from 'react';
+import { LoremIpsum } from 'react-lorem-ipsum';
+import { Carousel } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_REVIEW } from '../utils/queries';
 
-function SinglePost(){
+const SinglePost = (props) => {
+    const { id: reviewId } = useParams();
+    console.log(reviewId);
+  
+    const { loading, data } = useQuery(QUERY_REVIEW, {
+      variables: { id: reviewId }
+    });
+    
+    const review = data?.review || {};
+    
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+
     return(
         <>  
-            <div>
+            <div className='game__container'>
                 <section>
                     <div className="game__header">
                         <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc98jk.jpg" alt="header" />
@@ -14,12 +31,16 @@ function SinglePost(){
                 <section>
                 <div className="info">
                     <div id="title__info">
-                        <h1>Game Title</h1>
-                        <h2>Game Release Date</h2>
                         <h3>Game Developer</h3>
                         <div id="title__about">
-                            <h3>Genre:</h3>
+                            {/* <h3>Genre(s):</h3>
+                            {
+                                game.genres.map(g => `${g.name} | `)
+                            }   
                             <h3>Platforms:</h3>
+                            {
+                                game.platforms.map(p => `${p.platform.name} | `)
+                            } */}
                             <div className="rating">
                                 <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5" />
@@ -48,6 +69,21 @@ function SinglePost(){
                         <br />
                         <p>game description</p>
                         <p><LoremIpsum p={3} /></p>
+                    </div>
+                </section>
+                <section className="reviews">
+                    <div>
+                        <div>
+                            <p>
+                            <span>
+                                {review.username}
+                            </span>{' '}
+                            review on {review.createdAt}
+                            </p>
+                            <div>
+                            <p>{review.ReviewText}</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section id="single__carousel">

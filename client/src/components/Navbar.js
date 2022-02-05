@@ -10,15 +10,12 @@ function navBar(){
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/games">Games</Nav.Link>
-            <Nav.Link href="/single-game">Game</Nav.Link>
+            {/* <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/search">Search</Nav.Link> */}
+            {/* <Nav.Link href="/top-games">Top Games</Nav.Link> */}
             </Nav>
             <Nav>
             <Nav.Link href="#DarkMode"><i class='bx bx-sun'></i></Nav.Link>
-            <Nav.Link eventKey={2} href="/Search">
-                <i class='bx bx-search-alt'></i>
-            </Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Container>

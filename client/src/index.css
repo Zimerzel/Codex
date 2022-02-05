@@ -166,6 +166,10 @@
 
 
 /*========== Single Game Component ==========*/
+.game__container{
+
+}
+
 
 .game__header{
   width: 100vw;
@@ -179,7 +183,7 @@
   filter: blur(8px);
   -webkit-filter: blur(8px);
   width: 100vw;
-  height: 24vh;
+  height: 250px;
 }
 
 .info{
@@ -211,7 +215,7 @@ aside button{
   height: 600px;
   object-fit: cover;
   margin-left: 30px;
-  margin-top: -350px;
+  margin-top: -225px;
 }
 
 #title__info{
@@ -230,6 +234,8 @@ aside button{
 
 /* Rating */
 .rating{
+  font-style: italic;
+  color: white;
   float: right;
   margin-top: -80px;
   padding-right: 20px;
@@ -285,10 +291,10 @@ aside button{
 }
 
 #single__carousel{
-  border-top: 10px solid grey;
-  border-bottom: 10px solid grey;
-  border-left: 40px solid rgb(71, 71, 71);
-  border-right: 40px solid rgb(71, 71, 71);
+  border-top: 10px solid rgb(71, 71, 71);
+  border-bottom: 10px solid rgb(71, 71, 71);
+  border-left: 40px solid #212529;
+  border-right: 40px solid #212529;
   background-color: black;
   height: 100%;
 }
