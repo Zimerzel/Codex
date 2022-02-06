@@ -24,6 +24,7 @@ const Nav = () => {
 
   return (
     <>
+    <div className='nav__title'><h1>Codex</h1></div>
     <nav className="main__nav">
       <ul>
       <li>

@@ -1,11 +1,7 @@
 import React from 'react';
-import Controller from '../assets/images/controller.jpg';
+import Hero from '../assets/images/hero.jpg';
 import { LoremIpsum } from 'react-lorem-ipsum';
-import { Row, Col, Card, Dropdown, DropdownButton, FormControl, InputGroup } from 'react-bootstrap';
-
-import Halo from '../assets/images/Halo.jpg';
-import Forza from '../assets/images/forza.jpg';
-import F1 from '../assets/images/f1.jpg';
+import { HashLink } from 'react-router-hash-link';
 import CardList from './GameComponents/CardList';
 
 function Home(){
@@ -21,13 +17,18 @@ function Home(){
             <div class="home">
                 <section>
                     <div class="cloud-gaming">
-                        <img src={Controller} alt="cloud gaming" />
+                        <div id="hero-title">
+                            <h1>For Fans, By Fans</h1>
+                            <HashLink to="#games" smooth id="hero-btn">
+                                Games
+                            </HashLink>
+                        </div>
+                        <img src={Hero} alt="cloud gaming" />
                     </div>
-                    <div class="fans">
-                        <h1>For Fans, By Fans</h1>
-                        <p>
-                            <LoremIpsum p={2}/>
-                        </p>
+                </section>
+                <section>
+                    <div id="reviews-title">
+                        <h1> Hear what others are saying</h1>
                     </div>
                 </section>
                 <section class="testimonial section container">
@@ -84,6 +85,14 @@ function Home(){
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section>
+                <div class="fans">
+                    <h1>Leave A Review</h1>
+                    <p>
+                        <LoremIpsum p={1}/>
+                    </p>
                 </div>
             </section>
             <section className="games" id="games">

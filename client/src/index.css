@@ -46,13 +46,30 @@
 
 
 /*=============== Nav ===============*/
+.nav__title{
+  position: absolute;
+  color: #9147fe;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  width: 100vw;
+  height: 60px;
+  background-color: #252525;
+}
+
+.nav__title h1{
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
 nav{
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   right: 90px;
   top: 10px;
   font-family: Azonix;
-  height: 120px; 
+  height: 40px; 
+  background-color: #252525;
 }
  
 #games-btn{
@@ -184,61 +201,116 @@ nav{
 }
 
 /*========== Home Component ==========*/
+.main__content{
+margin-bottom: -100px;
+}
+
 .home{
   position: relative;
 }
 
-.cloud-gaming img{
-  float: right;
-  margin-top: -100px;
-  margin-right: 100px;
-  object-fit:cover;
-  left: 10px;
-  width: 32% !important;
-  height: 950px;
+.cloud-gaming{
+  border-bottom: #252525 10px solid;
+}
+
+#hero-title{
+  position: absolute;
+  left: 50%; 
+}
+
+#hero-btn{
+  position: relative;
+  background-color: #252525;
+  text-decoration: none;
+  border-radius: 20px;
+  padding:10px;
+  margin-top: 40px;
+  height: 40px;
+  left:-10%;
+  z-index: 3;
+}
+
+.cloud-gaming h1{
+  position: relative;
+  left: -50%;
+  margin-top: 175px;
+  color: rgb(0, 0, 0);
   z-index: 2;
 }
 
+.cloud-gaming img{
+  margin-top: -100px;
+  margin-right: 100px;
+  object-fit:cover;
+  left: 2px;
+  width: 100vw;
+  height: 600px;
+  filter: blur(1px);
+  z-index: 1;
+}
+
 .fans{
+  margin: 0 auto;
   padding-top: 250px;
-  padding-left: 10%;
   text-align: center;
   width: 50%;
 
 }
 
 /* Testimonial */
+#reviews-title{
+  text-align: center;
+  padding: 40px;
+  height: 150px;
+  color: #9147fe;
+  background-color: #252525;
+  width: 50%;
+  margin: 0 auto;
+}
+
 .testimonial__container{
   filter: drop-shadow(100);
   border-radius: 20px;
   width: 100%;
+  margin-top: -300px;
 }
 
 .testimonial{
   margin-top: 20%;
-  color: rgb(0, 0, 0);
+  color: #9147fe;
+}
+
+.-wrapper{
+  margin-top: 400px;
 }
 
 .testimonial__card{
+  background-color: #252525;
   width: 50%;
   margin-right: 100px;
-  padding-top: 90px;
-  padding-bottom: 30px;
+  margin-top: 40px;
+  padding:40px;
   margin-left:auto;
+  border-radius: 20px;
 }
 
 .testimonial__card2{
   width: 50%;
-  padding-top: 30px;
+  padding: 40px;
   margin-left: 100px;
+  margin-top: 40px;
+  background-color: #252525;
+  border-radius: 20px;
 }
 
 .testimonial__card3{
   width: 50%;
   margin-right: 100px;
-  padding-top: 0px;
-  padding-bottom: 30px;
+  margin-top: 40px;
+  padding: 40px;
   margin-left:auto;
+  background-color: #252525;
+  border-radius: 20px;
 }
 
 .testimonial__perfil {

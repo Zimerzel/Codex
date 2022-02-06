@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Spinner } from "react-bootstrap";
+import Review from '../ReviewList/index.js'
 
 const GameDetails = ({ match, history, error, setError }) => {
 	const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
@@ -91,21 +92,13 @@ const GameDetails = ({ match, history, error, setError }) => {
                         <p>{game.description_raw}</p>
                     </div>
                 </section>
-                <section className="reviews">
-                    {/* <div>
+                {/* <section className="reviews">
+                    <div>
                         <div>
-                            <p>
-                            <span>
-                                {review.username}
-                            </span>{' '}
-                            review on {review.createdAt}
-                            </p>
-                            <div>
-                            <p>{review.ReviewText}</p>
-                            </div>
+                            <Review />
                         </div>
-                    </div> */}
-                </section>
+                    </div>
+                </section> */}
             </div>
 
         </>
