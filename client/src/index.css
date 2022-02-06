@@ -378,6 +378,24 @@ gap: 5px;
 grid-auto-rows: minmax(100px, auto);
 }
 
+.game__container{
+ height: 100%;
+ width: 100%;
+}
+
+#game__info{
+height: 100%;
+}
+
+aside{
+margin-top: 40px;
+}
+
+.about{
+  height: 100%;
+  width: 100vw;
+  padding:  0  0 200px 0;
+}
 
 .game__header{
   width: 100vw;
@@ -430,6 +448,27 @@ aside button{
   color: white;
   margin-left: 500px;
   margin-top: -200px;
+  padding: 0 20px
+}
+
+@media only screen and (max-width:500px){
+  .about{
+    padding-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width:1020px){
+  #title__info{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -200px;
+
+  }
+  aside{
+    margin-top: 240px;
+  }
 }
 
 #title__info h1, #title__info h2, #title__info h3{

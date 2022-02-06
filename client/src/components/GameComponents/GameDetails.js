@@ -62,12 +62,13 @@ const GameDetails = ({ match, history, error, setError }) => {
     return (
         <>  
             <div className='game__container'>
+                <div id="game__info">
                 <section>
                     <div className="game__header">
                         <img src={game.background_image_additional} alt="header" />
                     </div>
                 </section>
-                <section>
+                <section g>
                 <div className="info">
                     <div id="title__info">
                         <h1>{game.name}</h1>
@@ -85,22 +86,15 @@ const GameDetails = ({ match, history, error, setError }) => {
                     </aside>
                 </div>
                 </section>
-                <section>
+                <section className="about">
                     <div id="title__description">
                         <h2>About</h2>
                         <br />
                         <p>{game.description_raw}</p>
                     </div>
                 </section>
-                {/* <section className="reviews">
-                    <div>
-                        <div>
-                            <Review />
-                        </div>
-                    </div>
-                </section> */}
+                </div>
             </div>
-
         </>
     )
 }
