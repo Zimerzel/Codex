@@ -6,7 +6,7 @@ import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import { Redirect } from 'react-router-dom';
 
-import Navbar from './components/Navbar'
+import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import GameDetails from './components/GameComponents/GameDetails'
@@ -38,7 +38,7 @@ function App() {
       <div>
         <header>
           {' '}
-          <Navbar />
+          <Nav />
         </header>
         <main>
           <Switch>

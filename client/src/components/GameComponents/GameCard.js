@@ -1,8 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import { NavLink } from 'react-router-dom'
-import { Player } from 'video-react'
-
 const GameCard = ({ game }) => {
 
     // use moment to format date / time ? 
@@ -13,7 +11,7 @@ const GameCard = ({ game }) => {
 		)
 	}
 	return (
-		<div>
+		<div className='GameCard'>
 			<NavLink to={`/` + game.slug}>
 				<Card className='text-center, NavLink'>
 					<Card.Body>

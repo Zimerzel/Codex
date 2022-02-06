@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { Carousel } from 'react-bootstrap';
 import Axios from "axios";
 import { Spinner } from "react-bootstrap";
-// import VideoPlayer from "./VideoPlayer";
 
 const GameDetails = ({ match, history, error, setError }) => {
 	const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
@@ -13,6 +11,15 @@ const GameDetails = ({ match, history, error, setError }) => {
 	const [rating, setRating] = useState({})
 	const [developer, setDeveloper] = useState([])
 
+
+    var el = document.getElementById('games-btn');
+    if(el){
+        el.addEventListener('load', removeBtn());
+    }
+    function removeBtn(){
+        document.getElementById('games-btn').style.visibility="hidden"
+    }
+ 
 	useEffect(
 		function getGame() {
 			const url = `https://api.rawg.io/api/games/${gameSlug}?key=${REACT_APP_API_KEY}`
@@ -99,33 +106,6 @@ const GameDetails = ({ match, history, error, setError }) => {
                         </div>
                     </div> */}
                 </section>
-                {/* <section id="single__carousel">
-                    <div>
-                        <Carousel>
-                            <Carousel.Item interval={6000}>
-                                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PyMlV5_HRWk?start=1" 
-                                    title="YouTube video player" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                                </iframe>
-                            </Carousel.Item>
-                            <Carousel.Item interval={6000}>
-                                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/d7-iz_uLV-E?start=1" 
-                                    title="YouTube video player" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                                </iframe>
-                            </Carousel.Item>
-                            <Carousel.Item interval={6000}>
-                                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/MBb88gLmJZY?start=1" 
-                                    title="YouTube video player" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                                </iframe>
-                            </Carousel.Item>
-                        </Carousel>
-                    </div>
-                </section> */}
             </div>
 
         </>

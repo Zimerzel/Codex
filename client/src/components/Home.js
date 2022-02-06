@@ -9,6 +9,13 @@ import F1 from '../assets/images/f1.jpg';
 import CardList from './GameComponents/CardList';
 
 function Home(){
+    var el = document.getElementById('games-btn');
+    if(el){
+        el.addEventListener('load', addBtn());
+    }
+    function addBtn(){
+        document.getElementById('games-btn').style.visibility="visible"
+    }
     return(
         <>
             <div class="home">
@@ -79,7 +86,7 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <section className="games">
+            <section className="games" id="games">
                 <CardList/>
             </section>
             </div>
