@@ -13,15 +13,15 @@ const GameCard = ({ game }) => {
 	return (
 		<div className='GameCard'>
 			<NavLink to={`/` + game.slug}>
-				<Card className='text-center, NavLink'>
+				<Card className='text-center, NavLink, card-body'>
 					<Card.Body>
-						<Card.Title>{game.name}</Card.Title>
+						<Card.Title className='card-title'>{game.name}</Card.Title>
 						<Card.Img
 							className='card-image'
 							variant='top'
 							src={game.background_image}
 						/>
-						<Card.Text>
+						<Card.Text className='card-description'>
 							Released: {game.released} <br />
 							Genre: {game.genres[0]?.name} <br />
 							Metacritic Rating: {game?.metacritic}

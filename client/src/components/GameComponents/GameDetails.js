@@ -68,7 +68,7 @@ const GameDetails = ({ match, history, error, setError }) => {
                         <img src={game.background_image_additional} alt="header" />
                     </div>
                 </section>
-                <section g>
+                <section>
                 <div className="info">
                     <div id="title__info">
                         <h1>{game.name}</h1>
