@@ -18,7 +18,7 @@ function Home(){
                 <section>
                     <div class="cloud-gaming">
                         <div id="hero-title">
-                            <h1>For Fans, By Fans</h1>
+                            <h1>For Fans, By Fans.</h1>
                             <HashLink to="#games" smooth id="hero-btn">
                                 Games
                             </HashLink>
@@ -28,13 +28,8 @@ function Home(){
                 </section>
                 <section>
                     <div id="mission">
-                        <h1> Our Mission</h1>
-                        <p>><LoremIpsum p={2} /></p>
-                    </div>
-                </section>
-                <section>
-                    <div id="reviews-title">
-                        <h1> Hear what others are saying</h1>
+                        <h1>Our Mission</h1>
+                        <p><LoremIpsum p={2} /></p>
                     </div>
                 </section>
                 <section class="testimonial section container">

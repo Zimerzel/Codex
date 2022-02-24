@@ -27,11 +27,6 @@ const Nav = () => {
     <div className='nav__title'><h1>Codex</h1></div>
     <nav className="main__nav">
       <ul>
-      <li>
-          <HashLink to="#games" smooth className="nav-link hover-underline-animation" id="games-btn">
-            Games
-          </HashLink>
-        </li>
         <li>
           <NavLink to="/" className="nav-link hover-underline-animation">
             Home

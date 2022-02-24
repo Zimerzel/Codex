@@ -240,6 +240,9 @@ margin-bottom: -100px;
   margin-top: 175px;
   color: rgb(0, 0, 0);
   z-index: 2;
+  font-weight: 900;
+  font-size: 3rem;
+  padding:20px;
 }
 
 .cloud-gaming img{
@@ -261,16 +264,17 @@ margin-bottom: -100px;
 
 }
 
-/* Testimonial */
-#reviews-title{
+#mission{
   text-align: center;
-  padding: 40px;
-  height: 150px;
-  color: #fc0000;
-  background-color: #252525;
-  width: 50%;
-  margin: 0 auto;
+  margin: 40px auto;
+  width: 80%;
 }
+
+#mission p{
+  text-align: start;
+}
+
+/* Testimonial */
 
 .testimonial__container{
   filter: drop-shadow(100);
